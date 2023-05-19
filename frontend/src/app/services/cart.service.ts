@@ -20,6 +20,11 @@ export class CartService {
       return;
   }
 
+  removeFromCart(foodId: string): void {
+    this.cart.items = this.cart.items
+      .filter(item => item.food.id != foodId);
+  }
+
 
 
 }
