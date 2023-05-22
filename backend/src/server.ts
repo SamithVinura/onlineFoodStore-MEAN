@@ -13,7 +13,7 @@ app.get('/api/foods',(req,res)=>{
     res.send(sample_foods)
 })
 
-app.get('/api/food/search/:searchTerm',(req,res)=>{
+app.get('/api/foods/search/:searchTerm',(req,res)=>{
     const searchTerm = req.params.searchTerm
     const foods = sample_foods
     .filter(food=>food.name.toLowerCase()
