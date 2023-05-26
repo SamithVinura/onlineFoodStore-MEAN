@@ -13,7 +13,7 @@ const USER_KEY = 'User'
 })
 export class UserService {
 
-  private userSubject = new BehaviorSubject<User>(new User())
+  private userSubject = new BehaviorSubject<User>(this.getUserToLocatStorage())
   public userObservable!:Observable<User>
   constructor(private http:HttpClient,private toastrService:ToastrService) {
     this.userObservable = this.userSubject.asObservable()
@@ -25,6 +25,7 @@ export class UserService {
 
     return  this.http.post<User>(USER_LOGIN_URL,userLogin).pipe(tap({
       next:(user)=>{
+        this.setUserToLocatStorage(user)
         this.userSubject.next(user)
         this.toastrService.success(
           `Welcome to FoodMine ${user.name}!`,

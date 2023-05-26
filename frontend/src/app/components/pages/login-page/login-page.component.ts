@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -43,4 +44,6 @@ export class LoginPageComponent implements OnInit {
       this.router.navigateByUrl(this.returnUrl)
     })
   }
+
+
 }
