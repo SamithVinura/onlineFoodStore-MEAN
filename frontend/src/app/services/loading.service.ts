@@ -17,4 +17,8 @@ export class LoadingService {
   hideLoading(){
     this.isLoadingSubject.next(false)
   }
+
+  get isLoading(){
+    return this.isLoadingSubject.asObservable()
+  }
 }
