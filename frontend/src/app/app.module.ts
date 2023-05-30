@@ -22,6 +22,7 @@ import { InputValidationComponent } from './components/partials/input-validation
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
 import { DefaultButtonComponent } from './components/partials/default-button/default-button.component';
 import { RegisterComponent } from './components/pages/register/register.component';
+import { LoadingComponent } from './components/partials/loading/loading.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { RegisterComponent } from './components/pages/register/register.componen
     TextInputComponent,
     DefaultButtonComponent,
     RegisterComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
