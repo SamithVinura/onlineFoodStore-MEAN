@@ -38,6 +38,8 @@ export class UserService {
     }))
   }
 
+  /* register(userregister:I) */
+
   logout(){
     this.userSubject.next(new User())
     localStorage.removeItem(USER_KEY)
