@@ -24,6 +24,7 @@ import { DefaultButtonComponent } from './components/partials/default-button/def
 import { RegisterComponent } from './components/pages/register/register.component';
 import { LoadingComponent } from './components/partials/loading/loading.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     DefaultButtonComponent,
     RegisterComponent,
     LoadingComponent,
+    CheckoutPageComponent,
   ],
   imports: [
     BrowserModule,
