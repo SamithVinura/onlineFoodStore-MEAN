@@ -18,12 +18,13 @@ export class HeaderComponent implements OnInit {
     })
 
     this.userService.userObservable.subscribe((newUser)=>{
-
       this.user = newUser
     })
   }
 
-  ngOnInit():void{}
+  ngOnInit():void{
+    console.log(this.user)
+  }
 
   logout(){
     this.userService.logout()
