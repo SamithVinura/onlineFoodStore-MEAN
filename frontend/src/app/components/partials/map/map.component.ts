@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { LatLng, LatLngExpression, LatLngTuple, LeafletMouseEvent, Map, Marker, icon, map, marker, tileLayer } from 'leaflet';
 import { LocationService } from 'src/app/services/location.service';
 import { Order } from 'src/app/shared/models/order';
@@ -8,7 +8,7 @@ import { Order } from 'src/app/shared/models/order';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnChanges {
   @Input()
   order!:Order;
   @Input()
@@ -28,8 +28,13 @@ export class MapComponent implements OnInit {
   currentMarker!:Marker;
   constructor(private locationService:LocationService){}
 
-  ngOnInit():void{
-    this.initializeMap()
+  ngOnChanges():void{
+    if(!this.order) return;
+    this.initializeMap();
+
+    if(this.readonly && this.addressLatLng){
+      this.showLocationOnReadonlyMode();
+    }
   }
 
   showLocationOnReadonlyMode() {
@@ -96,7 +101,7 @@ export class MapComponent implements OnInit {
     latlng.lat = parseFloat(latlng.lat.toFixed(8));
     latlng.lng = parseFloat(latlng.lng.toFixed(8));
     this.order.addressLatLng = latlng;
-    console.log(this.order.addressLatLng);
+
   }
 
   get addressLatLng(){
