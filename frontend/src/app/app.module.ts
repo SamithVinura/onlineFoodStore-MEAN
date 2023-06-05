@@ -61,7 +61,6 @@ import { OrderTrackPageComponent } from './components/pages/order-track-page/ord
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    RatingModule,
     HttpClientModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
