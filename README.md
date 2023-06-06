@@ -1,5 +1,5 @@
 # onlineFoodStore-MEAN
-# this web app is developed by using MERN stack
+# This web app developed by using MERN stack
 # Front-end live server in the firebase
   https://foodmine-mean-app.web.app/
 # Back-end live server in the render
